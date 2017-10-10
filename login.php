@@ -4,9 +4,9 @@ session_start();
 extract($_POST);
 include './konfig.php';
 $query = "select * from tbl_user where username = '$username' and password = '$password'";
-$result = mysql_query($query);
-if (mysql_num_rows($result)) {
-    while ($row = mysql_fetch_array($result)) {
+$result = mysqli_query($mysqli, $query);
+if (mysqli_num_rows($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $_SESSION['username'] = $row['username'];
         $_SESSION['id_user'] = $row['id_user'];
         $_SESSION['hak_akses'] = $row['hak_akses'];

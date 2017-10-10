@@ -18,11 +18,11 @@
 <tbody>
     <?php
     $query = "SELECT * FROM tbl_user order by id_user desc";
-    $result = mysql_query($query);
-    if (mysql_num_rows($result)) {
+    $result = mysqli_query($query);
+    if (mysqli_num_rows($result)) {
         //echo"ada isinya";	
         $no = 1;
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             ?>
             <tr>
                 <td><?php echo $no; ?> </td>
